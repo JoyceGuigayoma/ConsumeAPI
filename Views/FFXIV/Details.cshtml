@@ -1,0 +1,94 @@
+﻿@model UnityMembers.Models.Mount
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Mount</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Id)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Id)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Name)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Name)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Description)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Description)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.EnhancedDescription)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.EnhancedDescription)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Tooltip)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Tooltip)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Movement)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Movement)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Seats)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Seats)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Patch)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Patch)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.ItemId)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.ItemId)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Tradeable)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Tradeable)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Owned)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Owned)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Image)</dt>
+        <dd class="col-sm-10">
+            <img src="@Model.Image" alt="@Model.Name" style="max-width: 300px;" />
+        </dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Icon)</dt>
+        <dd class="col-sm-10">
+            <img src="@Model.Icon" alt="@Model.Name Icon" style="max-width: 100px;" />
+        </dd>
+    </dl>
+</div>
+
+<h4>Achievement</h4>
+<hr />
+<div>
+    @if (Model.Achievement != null)
+    {
+        <dl class="row">
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Achievement.Id)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Achievement.Id)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Achievement.Name)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Achievement.Name)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Achievement.Description)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Achievement.Description)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Achievement.Points)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Achievement.Points)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Achievement.Patch)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Achievement.Patch)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Achievement.Icon)</dt>
+            <dd class="col-sm-10">
+                <img src="@Model.Achievement.Icon" alt="@Model.Achievement.Name Icon" style="max-width: 100px;" />
+            </dd>
+        </dl>
+    }
+    else
+    {
+        <p>No achievement information available.</p>
+    }
+</div>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.Id */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
